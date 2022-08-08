@@ -1,0 +1,17 @@
+.single {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.single .singleContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.single .singleContainer .singleForm {
+  padding: 50px;
+}
+/*# sourceMappingURL=single.css.map */

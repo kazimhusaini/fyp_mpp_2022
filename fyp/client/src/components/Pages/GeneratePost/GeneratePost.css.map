@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,aAAa,CAAA;EACT,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;CAQb;;AAVF,AAGI,aAHS,CAGT,sBAAsB,CAAA;EAClB,IAAI,EAAC,CAAC;CAKT;;AATL,AAKQ,aALK,CAGT,sBAAsB,CAElB,iBAAiB,CAAA;EACb,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "GeneratePost.scss"
+    ],
+    "names": [],
+    "file": "GeneratePost.css"
+}

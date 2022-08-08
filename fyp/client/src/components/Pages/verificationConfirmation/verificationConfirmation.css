@@ -1,0 +1,17 @@
+.verificationConfirmation{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 100px  0;
+    
+}
+.verificationConfirmation h1{
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+.verificationConfirmationPaper{
+    padding: 20px;
+    border-radius: 15px;
+}

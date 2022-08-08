@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAAA,cAAc,CAAA;EACV,OAAO,EAAE,IAAI;EACb,KAAK,EAAE,IAAI;CAQb;;AAVF,AAGI,cAHU,CAGV,uBAAuB,CAAA;EACnB,IAAI,EAAC,CAAC;CAKT;;AATL,AAKQ,cALM,CAGV,uBAAuB,CAEnB,kBAAkB,CAAA;EACd,OAAO,EAAE,IAAI;CAChB",
+    "sources": [
+        "UpdateProfile.scss"
+    ],
+    "names": [],
+    "file": "UpdateProfile.css"
+}

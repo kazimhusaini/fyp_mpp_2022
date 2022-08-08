@@ -1,0 +1,17 @@
+.YourPost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.YourPost .YourPostContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.YourPost .YourPostContainer .YourPostForm {
+  padding: 50px;
+}
+/*# sourceMappingURL=YourPost.css.map */

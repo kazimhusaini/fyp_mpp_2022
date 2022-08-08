@@ -1,0 +1,17 @@
+.AllPosts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.AllPosts .AllPostsContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.AllPosts .AllPostsContainer .AllPostsForm {
+  padding: 50px;
+}
+/*# sourceMappingURL=AllPosts.css.map */

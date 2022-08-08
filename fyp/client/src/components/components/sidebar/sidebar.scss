@@ -1,0 +1,108 @@
+.sidebar {
+    flex: 0;
+    border-right: 0.5px solid lightgray;
+    min-height: 100vh;
+    background: #fff;
+
+    .top {
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            font-size: 18px;
+            font-weight: bold;
+            color: #000;
+            padding: 0 10px;
+        }
+    }
+
+    hr {
+        height: 0;
+        border: 0.5px solid lightgray;
+    }
+
+    .center {
+        padding-left: 10px;
+
+        ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+
+            .title {
+                font-size: 10px;
+                font-weight: bold;
+                color: #999;
+                margin: 15px 0 5px;
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+                padding: 5px;
+                cursor: pointer;
+
+                &:hover {
+                    background: #ece8ff;
+                }
+
+                .icon {
+                    font-size: 18px;
+                    color: #000;
+                }
+
+                span {
+                    font-size: 13px;
+                    font-weight: 600px;
+                    color: #888;
+                    margin-left: 10px;
+                }
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        align-items: center;
+        margin: 10px;
+
+        .colorOption {
+            width: 20px;
+            height: 20px;
+            cursor: pointer;
+            margin: 5px;
+            border-radius: 5px;
+            border: 1px solid #7451f8;
+
+            &:nth-child(1) {
+                background-color: #fff;
+            }
+
+            &:nth-child(2) {
+                background-color: #333;
+            }
+
+            &:nth-child(3) {
+                background-color: darkblue;
+            }
+        }
+    }
+
+    .sideText {
+        font-weight: 600 !important;
+        font-size: 0.875rem !important;
+        line-height: 1.75 !important;
+        color: rgb(209, 213, 219) !important;
+    }
+
+    a {
+        color: rgb(209, 213, 219);
+        text-decoration: none;
+        font-weight: 700;
+    }
+
+
+
+}

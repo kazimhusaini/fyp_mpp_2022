@@ -1,0 +1,17 @@
+.UpdateProfile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.UpdateProfile .UpdateProfileContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.UpdateProfile .UpdateProfileContainer .UpdateProfileForm {
+  padding: 50px;
+}
+/*# sourceMappingURL=UpdateProfile.css.map */

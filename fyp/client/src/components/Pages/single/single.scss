@@ -1,0 +1,10 @@
+.single{
+    display: flex;
+    width: 100%;
+    .singleContainer{
+        flex:6;
+        .singleForm{
+            padding: 50px;
+        }
+    }
+ }

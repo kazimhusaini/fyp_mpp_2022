@@ -1,0 +1,17 @@
+.GeneratePost {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.GeneratePost .GeneratePostContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.GeneratePost .GeneratePostContainer .GeneratePostForm {
+  padding: 50px;
+}
+/*# sourceMappingURL=GeneratePost.css.map */

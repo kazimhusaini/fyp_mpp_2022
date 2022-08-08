@@ -1,0 +1,11 @@
+.GeneratePost{
+    display: flex;
+    width: 100%;
+    .GeneratePostContainer{
+        flex:6;
+        .GeneratePostForm{
+            padding: 50px;
+        }
+        
+    }
+ }

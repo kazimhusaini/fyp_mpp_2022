@@ -1,0 +1,11 @@
+.AllPosts{
+    display: flex;
+    width: 100%;
+    .AllPostsContainer{
+        flex:6;
+        .AllPostsForm{
+            padding: 50px;
+        }
+        
+    }
+ }

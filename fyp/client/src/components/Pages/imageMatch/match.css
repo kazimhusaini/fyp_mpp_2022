@@ -1,0 +1,21 @@
+.Match {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.Match .MatchContainer {
+  -webkit-box-flex: 6;
+      -ms-flex: 6;
+          flex: 6;
+}
+
+.Match .MatchContainer .MatchForm {
+  padding: 50px;
+}
+
+.makeStyles-Space-2 {
+  margin: 0 !important;
+}
+/*# sourceMappingURL=match.css.map */
