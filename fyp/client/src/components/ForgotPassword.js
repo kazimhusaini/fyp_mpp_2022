@@ -19,7 +19,8 @@ import { Context } from "../context/Context";
 import { Alert, Collapse, IconButton } from '@mui/material';
 import AlertTitle from '@mui/material/AlertTitle';
 import CloseIcon from '@mui/icons-material/Close';
-import useForm from '../ForgotPassUseForm';
+import useForm from './ForgotPassUseForm';
+import { useNavigate } from 'react-router-dom';
 
 
 const theme = createTheme();
@@ -29,7 +30,7 @@ export default function ForgotPassword() {
     email: "",
     open: false
   };
-
+let navigate =useNavigate();
   const submit = () => {
     console.log(" Submited");
   };
@@ -55,18 +56,7 @@ export default function ForgotPassword() {
     Object.values(errors).filter(error => typeof error !== "undefined")
       .length === 0;
 
-  // const [isUserVerifiedUser, setIsUserVerifiedUser] = useState([]);
-  // const { search } = useLocation();
-  // const [id, setId] = useState(null);
   useEffect(() => {
-    // const fecthData = async () => {
-    //   await axios.get("/users")
-    //     .then(res => {
-    //       setIsUserVerifiedUser(res.data);
-    //       console.log(isUserVerifiedUser);
-    //     });
-    // };
-    // fecthData();
   }, []);
   const userRef = useRef();
   const passwordRef = useRef();
@@ -91,16 +81,18 @@ export default function ForgotPassword() {
           }}
         />
         <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
-          <Collapse in={opened}>
+          <Collapse in={open}>
             <Alert
-              severity="error"
+              severity="success"
               action={
                 <IconButton
                   aria-label="close"
                   color="inherit"
                   size="small"
                   onClick={() => {
-                    setOpened(false);
+                    setOpen(false);
+                    navigate("/login");
+                    
                   }}
                 >
 
@@ -108,7 +100,7 @@ export default function ForgotPassword() {
                 </IconButton>
               }
             >
-              <strong>Account not Verified!</strong>
+              <strong>{eText}</strong>
             </Alert>
           </Collapse>
           <Box

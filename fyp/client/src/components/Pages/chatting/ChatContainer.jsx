@@ -11,7 +11,6 @@ import {
 } from "../../../utils/APIRoutes";
 import { Context } from "../../../context/Context";
 import Contacts from "./Contacts";
-import { notiContext } from "../../../context/Notifications";
 import { Avatar } from "@mui/material";
 import ScaleLoader from "react-spinners/ScaleLoader";
 import { socket } from "../../../context/SocketContext";
@@ -21,7 +20,6 @@ export default function ChatContainer({ currentChat }) {
   const { user, dispatch, isFetching } = useContext(Context);
   const [notifications, setNotifications] = useState([]);
   const [open, setOpen] = useState(false);
-  const { dispatch2, noti } = useContext(notiContext);
   const [show, setShow] = useState(true);
   const [arrivalMessage, setArrivalMessage] = useState(null);
   let [color, setColor] = useState("#1090CB");

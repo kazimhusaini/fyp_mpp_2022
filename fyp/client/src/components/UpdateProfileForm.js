@@ -262,7 +262,7 @@ export default function UpdateProfileForm() {
                             onChange={(e) => setEmail(e.target.value)}
                         />
                     </Grid>
-                    <Grid item xs={12} sm={6}>
+                    {/* <Grid item xs={12} sm={6}>
                         <TextField
                             size="small"
                             required
@@ -276,7 +276,7 @@ export default function UpdateProfileForm() {
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
-                    </Grid>
+                    </Grid> */}
                     <Grid item xs={12} sm={6}>
                         <TextField
                             size="small"

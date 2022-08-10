@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef, useContext } from "react";
 import axios from "axios";
-import { Context } from "./context/Context";
+import { Context } from "../context/Context";
 // ******************************
 const ForgotPassUseForm = ({ initState, callback, validator }) => {
     const [state, setState] = useState(initState);
@@ -54,6 +54,8 @@ const ForgotPassUseForm = ({ initState, callback, validator }) => {
             const res = await axios.put("/auth/forgot_password", {
               email:state.email,
             });
+            setEText("Verification Link send to Your Email")
+            setOpen(true)
             console.log("forgot password work");
           } catch (err) {
             console.log("forgot password error");

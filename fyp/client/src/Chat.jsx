@@ -8,7 +8,6 @@ import ChatContainer from "./components/Pages/chatting/ChatContainer";
 import Contacts from "./components/Pages/chatting/Contacts";
 import Welcome from "./components/Pages/chatting/Welcome";
 import { Context } from "./context/Context";
-import { notiContext } from "./context/Notifications";
 import { socket } from "./context/SocketContext";
 import { makeStyles } from "@material-ui/core";
 
@@ -17,8 +16,6 @@ const useStyles = makeStyles(theme => ({
 }))
 export default function Chat() {
   const navigate = useNavigate();
-  const { dispatch2, noti } = useContext(notiContext);
-
   // const socket = useRef();
   const [contacts, setContacts] = useState([]);
   const [currentChat, setCurrentChat] = useState(undefined);

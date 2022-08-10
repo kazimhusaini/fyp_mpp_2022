@@ -11,20 +11,20 @@ export function Home() {
       <Sidebar />
       <div className="homeContainer">
         <Navbar />
-        {/* <div className="widgets">
-          <Widget type="user" />
+        <div className="widgets">
+          <Widget type="posts" />
           <Widget type="order" />
           <Widget type="earning" />
           <Widget type="balance" />
         </div>
         <div className="charts">
-          <Feacturd/>
+          {/* <Feacturd/> */}
           <Chart/>
         </div>
         <div className="listContainer">
           <div className="listTitle">Latest Transaction</div>
           <ListTable/>
-        </div> */}
+        </div>
       </div>
     </div>
   )

@@ -1,26 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
 import { ContextProvider } from "./context/Context";
-import { NotiContextProvider } from "./context/Notifications";
-
 import { DarkModeContextProvider } from "./context/darkModeContext";
-import { SocketContext ,socket} from './context/SocketContext';
+import { SocketContext, socket } from "./context/SocketContext";
+import { PostContextProvider } from "./context/PostContext";
 
 ReactDOM.render(
   <React.StrictMode>
     <DarkModeContextProvider>
       <ContextProvider>
-        <NotiContextProvider>
-        <SocketContext.Provider value={socket}>
-          <App />
+        <PostContextProvider>
+          <SocketContext.Provider value={socket}>
+            <App />
           </SocketContext.Provider>
-        </NotiContextProvider>
+        </PostContextProvider>
       </ContextProvider>
     </DarkModeContextProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
-
-

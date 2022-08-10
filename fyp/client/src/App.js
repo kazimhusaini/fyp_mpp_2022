@@ -39,7 +39,6 @@ import AlertTitle from "@mui/material/AlertTitle";
 import CloseIcon from "@mui/icons-material/Close";
 import Chat from "./Chat";
 import SetAvatar from "./components/Pages/chatting/SetAvatar";
-import { notiContext } from "./context/Notifications";
 import { Navbar } from "./components/components/navbar/Navbar";
 import Header from "./components/AppBar";
 import "./style/dark.scss";
@@ -90,8 +89,6 @@ function App() {
   const classes = useStyles();
 
   const { user, dispatch, isFetching } = useContext(Context);
-  const { noti } = useContext(notiContext);
-
   let [loading, setLoading] = useState(true);
   let [color, setColor] = useState("#000");
   let [test, setTest] = useState("");
@@ -187,7 +184,7 @@ function App() {
                 element={<VerificationConfirmation />}
               ></Route>
               <Route path="chat" element={<ChatDash />}></Route>
-              <Route path="setAvatar" element={<Navbar noti={noti} />}></Route>
+              <Route path="setAvatar" element={<Navbar />}></Route>
               <Route path="contactus" element={<ContactUs />}></Route>
             </Routes>
           </BrowserRouter>

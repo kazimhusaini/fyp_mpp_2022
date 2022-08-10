@@ -20,7 +20,7 @@ router.post("/addmsg/",async (req, res, next) => {
   })
 router.post("/getmsg/",async (req, res, next) => {
     try {
-      const { from, to,Msend } = req.body;
+      const { from, to,Msend ,_id} = req.body;
   
       const messages = await Messages.find({
         users: {
@@ -32,8 +32,9 @@ router.post("/getmsg/",async (req, res, next) => {
         return {
           fromSelf: msg.sender.toString() === from,
           message: msg.message.text,
-          mSendted: msg.messageSent.toString() === Msend
+          id:msg._id
         };
+        console.log(msg._id);
       });
       res.json(projectedMessages);
     } catch (ex) {
@@ -41,4 +42,19 @@ router.post("/getmsg/",async (req, res, next) => {
     }
   })
 
+  
+router.delete("/:id",async (req, res, next) => {
+  try {
+    const msg = await Messages.findById(req.params.id);
+      try {
+        await msg.delete();
+        res.status(200).json("msg has been deleted...");
+      } catch (err) {
+        res.status(500).json(err);
+      }
+  
+  } catch (err) {
+    res.status(500).json(err);
+  }
+})
 module.exports = router;

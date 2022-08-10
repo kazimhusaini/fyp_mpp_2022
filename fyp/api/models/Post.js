@@ -73,7 +73,6 @@ const PostSchema = new mongoose.Schema(
     firstname: {
       type: String,
       required: true,
-      unique: true,
     },
     lastname: {
       type: String,

@@ -250,6 +250,7 @@ export const Sidebar = () => {
         <List>
           {listItems.map((listItem, index) => (
             <NavLink
+            key={index}
               className={(navData) => (navData.isActive ? 'active' : 'link')}
               to={listItem.to} >
               <ListItem key={listItem} sx={{ display: 'block' }} className="btnBg" >

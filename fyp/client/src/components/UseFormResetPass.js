@@ -1,20 +1,17 @@
-import { useState, useEffect, useContext, useRef } from "react";
+import { useState, useEffect, useRef, useContext } from "react";
 import axios from "axios";
+import { useNavigate, useParams } from "react-router-dom";
 import { Context } from "../context/Context";
-import { useNavigate } from "react-router-dom";
 
 // ******************************
-const useForm = ({ initState, callback, validator }) => {
+const UseFormResetPass = ({ initState, callback, validator }) => {
   const [state, setState] = useState(initState);
   const [errors, setErrors] = useState({});
+  const [open, setOpen] = useState(false);
   const [eText, setEText] = useState("");
   const [isSubmited, setIsSubmited] = useState(false);
-  const userRef = useRef();
-  const passwordRef = useRef();
-  const [open, setOpen] = useState(false);
-  const { user, dispatch, isFetching } = useContext(Context);
-  const [posts, setPosts] = useState([]);
-  let navigate = useNavigate()
+  const {resetToken} = useParams();
+let navigate=useNavigate();
 
   // ******************************
   useEffect(() => {
@@ -22,7 +19,7 @@ const useForm = ({ initState, callback, validator }) => {
       Object.values(errors).filter((error) => typeof error !== "undefined")
         .length > 0;
     if (isSubmited && !isValidErrors()) callback();
-  }, []);
+  }, [errors]);
 
   // ******************************
   const handleChange = (e) => {
@@ -40,15 +37,14 @@ const useForm = ({ initState, callback, validator }) => {
   };
 
   // ******************************
-  const handleBlur = (e) => {
-    const { name: fieldName } = e.target;
-    const faildFiels = validator(state, fieldName);
-    setErrors(() => ({
-      ...errors,
-      [fieldName]: Object.values(faildFiels)[0],
-    }));
-  };
+  const handleBlur = (e) => {};
 
+  const userRef = useRef();
+  const { user, dispatch, isFetching } = useContext(Context);
+  const passwordRef = useRef();
+
+
+  // ******************************
   const handleSubmit = async (e) => {
     e.preventDefault();
     const { name: fieldName } = e.target;
@@ -58,22 +54,21 @@ const useForm = ({ initState, callback, validator }) => {
       [fieldName]: Object.values(faildFiels)[0],
     }));
     setIsSubmited(true);
-    dispatch({ type: "LOGIN_START" });
     try {
-      const res = await axios.post("/auth/login", {
-        email: state.email,
-        password: state.password,
+      const res = await axios.put("/auth/reset_password", {
+        newPass: state.password,
+        resetLink: resetToken,
       });
-      dispatch({ type: "LOGIN_SUCCESS", payload: res.data });             
-      res.data && navigate("/dash");
-
-      console.log(res);
+      console.log(" password change");
+      res.data && navigate("/login");
     } catch (err) {
-      dispatch({ type: "LOGIN_FAILURE" });
-      if (err.response.data) {
-        setEText(err.response.data);
-        setOpen(true);
-      }
+        if (err.response.data) {
+            console.log(resetToken,"t");
+            console.log(" password not change",err.response.data,"s");
+            navigate("/login");
+
+        }
+
     }
   };
 
@@ -82,12 +77,12 @@ const useForm = ({ initState, callback, validator }) => {
     handleSubmit,
     handleBlur,
     state,
-    open,
     eText,
     setEText,
-    setOpen,
     errors,
+    setOpen,
+    open,
   };
 };
 
-export default useForm;
+export default UseFormResetPass;

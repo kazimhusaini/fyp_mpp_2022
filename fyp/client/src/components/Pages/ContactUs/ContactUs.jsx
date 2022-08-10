@@ -103,7 +103,6 @@ export const ContactUs = () => {
                   placeholder="Email:"
                   onChange={(e) => setEmail(e.target.value)}
                 />
-                <label>Email:</label>
               </div>
               <div class="form-item">
                 <textarea
@@ -113,7 +112,6 @@ export const ContactUs = () => {
                   placeholder="Message:"
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
-                <label>Message:</label>
               </div>
               <button class="submit-btn" type="submit">
                 Send
