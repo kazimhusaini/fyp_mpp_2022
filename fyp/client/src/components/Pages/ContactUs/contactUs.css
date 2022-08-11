@@ -92,7 +92,7 @@
   cursor: pointer;
 }
 
-.contact img {
+.contact-form-wrapper .contact img {
   width: 45px;
   height: 45px;
   filter: 

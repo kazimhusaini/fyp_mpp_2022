@@ -5,6 +5,7 @@ import InstagramIcon from '@mui/icons-material/Instagram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import FacebookIcon from '@mui/icons-material/Facebook';
+import { NavLink } from 'react-router-dom';
 export const Footer = () => {
     return (
         <div>
@@ -12,23 +13,23 @@ export const Footer = () => {
                 <Container maxWidth="lg" >
                     <Box py={{ xs: 0, sm: 15 }} px={{ xs: 0, sm: 0 }}>
                         <Grid container spacing={5}>
-                            <Grid item xs={12} sm={4}>
-                                <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px"}}>
+                            {/* <Grid item xs={12} sm={4}> */}
+                                {/* <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px"}}>
                                     About us
-                                </Box>
-                                <Box sx={{padding:"0 0 15px"}}>
+                                </Box> */}
+                                {/* <Box sx={{padding:"0 0 15px"}}>
                                     <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Portfolio</Link>
                                 </Box>
                                 <Box sx={{padding:"0 0 15px"}}>
                                     <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Careers</Link>
+                                </Box> */}
+                                {/* <Box sx={{padding:"0 0 15px"}}>
+                                    <Link sx={{ textDecoration:"none" }} href="/contactus" color="inherit">Contact us</Link>
                                 </Box>
-                                <Box sx={{padding:"0 0 15px"}}>
-                                    <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Contact us</Link>
-                                </Box>
-                            </Grid>
-                            <Grid item xs={12} sm={4}>
-                                <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px"}}>
-                                    Contact us
+                            </Grid> */}
+                            <Grid item xs={12} sm={6}>
+                                <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px",textDecorationL:"none",color:"#fff"}}>
+                                    <NavLink to="contactus">Contact us</NavLink>
                                 </Box>
                                 <Box sx={{padding:"0 0 15px"}}>
                                     <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Link>
@@ -37,7 +38,7 @@ export const Footer = () => {
                                     <Link sx={{ textDecoration:"none" }} href="/" color="inherit">+908 89097 890</Link>
                                 </Box>
                             </Grid>
-                            <Grid item xs={12} sm={4} sx={{ display: 'flex',justifyContent:"space-evenly", alignItems:"end" }}>
+                            <Grid item xs={12} sm={6} sx={{ display: 'flex',justifyContent:"space-evenly", alignItems:"end" }}>
                                 <Box sx={{padding:"0 0 15px"}}>
                                     <Link sx={{ textDecoration:"none" }} href="/" color="inherit"><FacebookIcon /></Link>
                                 </Box>

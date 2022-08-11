@@ -50,6 +50,7 @@ export default function YourPost() {
       <div className="YourPostContainer">
         <Navbar />
         <div className="YourPostForm">
+          <h2>Your Post</h2>
           <div className="posts">
             {loading && loading ?
               <div className="" style={{ position: "absolute", top: 0, left: 0, display: "flex", zIndex: 9, width: "100%" }} >
@@ -62,7 +63,7 @@ export default function YourPost() {
                   return (
                     p.username === user.username ? (
                       <Post post={p} />
-                    ) : (<h3> Nothing posted yet</h3>)
+                    ) : (null)
 
                   )
                 })

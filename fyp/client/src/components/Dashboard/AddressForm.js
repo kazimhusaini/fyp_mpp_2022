@@ -132,6 +132,7 @@ export default function AddressForm() {
         const newPost = {
             username: user.username,
             email: user.email,
+            number:user.number,
             firstname,
             lastname,
             address,

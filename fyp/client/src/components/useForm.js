@@ -8,7 +8,7 @@ const useForm = ({ initState, callback, validator }) => {
   const [open, setOpen] = useState(false);
   const [eText, setEText] = useState("");
   const [isSubmited, setIsSubmited] = useState(false);
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   // ******************************
   useEffect(() => {
     const isValidErrors = () =>

@@ -8,6 +8,7 @@ import { useContext, useEffect, useState } from "react";
 import Posts from "../../components/posts/Posts";
 import { useLocation, useParams } from "react-router-dom";
 import { Context } from "../../../context/Context";
+import Fposts from "../../components/posts/Fposts";
 
 export default function FilterPost() {
   const { user, dispatch, isFetching } = useContext(Context);
@@ -18,6 +19,7 @@ export default function FilterPost() {
     const fetchPosts = async () => {
       const res = await axios.get(`/posts/missingFilter/${firstname}/${lastname}/${city}/${missingAge}/${missingDate}/${ageType}/${gender}/` );
       setPosts(res.data);
+      console.log(res.data);
     };
 
     fetchPosts();
@@ -30,13 +32,13 @@ export default function FilterPost() {
           <div className="AllPostsContainer">
             <Navbar />
             <div className="AllPostsForm">
-              <Posts posts={posts} />
+              <Fposts posts={posts} />
             </div>
           </div>
         </div>
 
         :
-        <Posts posts={posts} />
+        <Fposts posts={posts} />
       }
     </>
   );

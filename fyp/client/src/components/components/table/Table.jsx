@@ -7,7 +7,7 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
 import RemoveRedEyeIcon from "@mui/icons-material/RemoveRedEye";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { PostContext } from "../../../context/PostContext";
 import { Link } from "react-router-dom";
 const rows = [
@@ -67,7 +67,7 @@ export const ListTable = () => {
   const PF = "http://localhost:5000/images/";
 
   // const { user } = useContext(Context);
-
+  useEffect(() => {}, [posts]);
   return (
     <TableContainer component={Paper} className="table">
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
@@ -86,7 +86,7 @@ export const ListTable = () => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {posts.length < 6
+          {posts && posts.length <= 6
             ? posts &&
               posts.map((row) => (
                 <TableRow key={row._id}>
@@ -110,8 +110,8 @@ export const ListTable = () => {
                   <TableCell className="tableCell">{row.gender}</TableCell>
 
                   <TableCell className="tableCell">
-                    <Link to={`/post/${row._id}`} > 
-                        <RemoveRedEyeIcon />
+                    <Link to={`/post/${row._id}`}>
+                      <RemoveRedEyeIcon />
                     </Link>
                   </TableCell>
                 </TableRow>

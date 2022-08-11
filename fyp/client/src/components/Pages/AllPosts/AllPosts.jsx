@@ -21,6 +21,7 @@ export default function AllPosts() {
           <div className="AllPostsContainer">
             <Navbar />
             <div className="AllPostsForm">
+              <h2>All Posts</h2>
               <Posts  />
             </div>
           </div>

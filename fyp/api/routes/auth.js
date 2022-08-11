@@ -231,7 +231,9 @@ router.get('/verify_email/:id', async (req, res) => {
 
 router.put('/forgot_password', async (req, res) => {
   const { email } = req.body;
+  try{
   User.findOne({ email }, (err, user) => {
+
     if (err || !user) {
       return res.status(400).json({ error: "user with  this email already exists." })
     }
@@ -259,6 +261,12 @@ router.put('/forgot_password', async (req, res) => {
       }
     })
   })
+}
+catch(err){
+  if (err) {
+    return res.status(400).json({ error: "Email is not valid" })
+  }
+}
 })
 
 router.put('/reset_password', async (req, res) => {

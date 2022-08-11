@@ -28,9 +28,9 @@ const Button = styled.button`
   background: #fff;
   position: fixed;
   botton: 0;
-  top: 18px;
+  top: 70px;
   padding: 5px;
-  right: 12px;
+  right: 2px;
   z-index: 99999;
   }
 

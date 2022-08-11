@@ -91,8 +91,7 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get(
-  "/missingFilter/:_firstname/:_lastname/:_city/:_missingAge/:_missingDate/:_ageType/:_gender",
+router.get("/missingFilter/:_firstname/:_lastname/:_city/:_missingAge/:_missingDate/:_ageType/:_gender",
   async (req, resp) => {
     const firstname = req.params._firstname;
     const lastname = req.params._lastname;

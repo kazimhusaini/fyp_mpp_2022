@@ -10,6 +10,8 @@ import ChatIcon from "@mui/icons-material/Chat";
 import { Box, Button } from "@mui/material";
 import AddPhotoAlternateIcon from "@mui/icons-material/AddPhotoAlternate";
 import { makeStyles } from "@material-ui/core";
+import { useNavigate } from "react-router-dom";
+
 
 // import Chat from "../../Pages/Chat";
 // import io from 'socket.io-client'
@@ -99,6 +101,8 @@ const useStyles = makeStyles((theme) => ({
 }));
 
 export default function SinglePost() {
+  let navigate =useNavigate();
+
   const location = useLocation();
   const classes = useStyles();
   const path = location.pathname.split("/")[2];
@@ -116,6 +120,8 @@ export default function SinglePost() {
   const [ageType, setAgeType] = useState("");
   const [missingDate, setMissingDate] = useState("");
   const [role, setRole] = useState("");
+  const [num, setNum] = useState("");
+
 
   const [username, setUsername] = useState("");
   const [senderId, setsenderId] = useState(null);
@@ -138,6 +144,7 @@ export default function SinglePost() {
       setMissingDate(res.data.missingDate);
       setRole(res.data.role);
       setDescription(res.data.description);
+      setNum(res.data.number)
     };
     getPost();
   }, [path]);
@@ -147,7 +154,7 @@ export default function SinglePost() {
       await axios.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
-      window.location.replace("/dash");
+      navigate("/AllPosts");
     } catch (err) {}
   };
 
@@ -165,6 +172,7 @@ export default function SinglePost() {
       missingDate,
       role,
       description,
+      num,
     };
     if (file) {
       const data = new FormData();
@@ -349,6 +357,19 @@ export default function SinglePost() {
                 ) : (
                   <span>{new Date(post.missingDate).toDateString()}</span>
                 )}
+              </li>
+              <li>
+              <span className="postDetailItem">Phone Number:</span>{" "}
+                {updateMode ? (
+                  <input
+                    type="text"
+                    value={num}
+                    className="singlePostTitleInput"
+                    autoFocus
+                    onChange={(e) => setNum(e.target.value)}
+                  />
+                ) : (
+                  <span>{num}</span>)}
               </li>
               <li>
                 <span className="postDetailItem">Address:</span>{" "}

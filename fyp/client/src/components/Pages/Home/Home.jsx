@@ -13,16 +13,9 @@ export function Home() {
         <Navbar />
         <div className="widgets">
           <Widget type="posts" />
-          <Widget type="order" />
-          <Widget type="earning" />
-          <Widget type="balance" />
-        </div>
-        <div className="charts">
-          {/* <Feacturd/> */}
-          <Chart/>
         </div>
         <div className="listContainer">
-          <div className="listTitle">Latest Transaction</div>
+          <div className="listTitle">Latest Posts</div>
           <ListTable/>
         </div>
       </div>

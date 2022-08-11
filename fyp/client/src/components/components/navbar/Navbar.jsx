@@ -80,13 +80,13 @@ export const Navbar = () => {
       <div className="wrapper">
         <div className="items">
           <div className="item">
-            <div className="icon" onClick={() => setOpen(!open)}>
+            {/* <div className="icon" onClick={() => setOpen(!open)}>
               <NotificationsNoneOutlinedIcon className="icon" />
               {
                 notifications.length > 0 &&
                 <div className="counter">{notifications.length}</div>
               }
-            </div>
+            </div> */}
           </div>
           {open && (
             <div className="notifications">

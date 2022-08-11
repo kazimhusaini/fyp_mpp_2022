@@ -90,6 +90,10 @@ const PostSchema = new mongoose.Schema(
       type: String,
       required: true,
     },
+    number: {
+      type: String,
+      required: true,
+    },
     missingAge: {
       type: String,
       required: true,

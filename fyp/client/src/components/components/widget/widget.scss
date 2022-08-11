@@ -1,12 +1,12 @@
 .widget{
     display: flex;
     flex: 1;
-    padding: 10px;
+    padding: 20px;
     justify-content: space-between;
     -webkit-box-shadow:2px 4px 10px 1px rgba(201, 201, 201, 0.47);
     box-shadow:2px 4px 10px 1px rgba(201, 201, 201, 0.47);
     border-radius: 10px;
-    height: 100px;
+    height: 150px;
     .left,.right{
         display: flex;
         flex-direction: column;

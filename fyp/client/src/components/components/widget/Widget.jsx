@@ -9,6 +9,7 @@ import {
 } from "@mui/icons-material";
 import { PostContext } from "../../../context/PostContext";
 import { Context } from "../../../context/Context";
+import { NavLink } from "react-router-dom";
 export const Widget = ({ type }) => {
   const { posts } = useContext(PostContext);
   const { user } = useContext(Context);
@@ -82,7 +83,7 @@ export const Widget = ({ type }) => {
       <div className="left">
         <span className="title">{data.title}</span>
         <span className="counter">{data.isPOsts ? postSize : null}</span>
-        <span className="link">{data.link}</span>
+        <span className="link"><NavLink to="/AllPosts">{data.link}</NavLink></span>
       </div>
       <div className="right"></div>
     </div>
