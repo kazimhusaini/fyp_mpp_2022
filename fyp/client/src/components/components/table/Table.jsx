@@ -73,7 +73,7 @@ export const ListTable = () => {
       <Table sx={{ minWidth: 650 }} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell className="tableCell">ID</TableCell>
+            {/* <TableCell className="tableCell">ID</TableCell> */}
             <TableCell className="tableCell">Image</TableCell>
             <TableCell className="tableCell">Name</TableCell>
             <TableCell className="tableCell">Date</TableCell>
@@ -90,7 +90,7 @@ export const ListTable = () => {
             ? posts &&
               posts.map((row) => (
                 <TableRow key={row._id}>
-                  <TableCell className="tableCell">{row._id}</TableCell>
+                  {/* <TableCell className="tableCell">{row._id}</TableCell> */}
                   <TableCell className="tableCell">
                     <div className="cellWrapper">
                       <img src={PF + row.photo} alt="" className="image" />

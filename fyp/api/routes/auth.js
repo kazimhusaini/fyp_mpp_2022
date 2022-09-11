@@ -193,7 +193,7 @@ router.get('/verify_email/:id', async (req, res) => {
       return res.status(422).send({
         message: "Missing Token",
       });
-    }
+    }         
     catch (err) {
       return res.status(404).send({
         message: "err",

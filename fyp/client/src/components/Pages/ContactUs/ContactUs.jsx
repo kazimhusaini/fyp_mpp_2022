@@ -1,5 +1,6 @@
 import { Alert, AlertTitle, Collapse, IconButton } from "@mui/material";
 import React, { useState } from "react";
+import Snackbar from '@mui/material/Snackbar';
 import "./contactUs.css";
 import CloseIcon from "@mui/icons-material/Close";
 import axios from "axios";
@@ -29,37 +30,22 @@ export const ContactUs = () => {
       }
     }
   };
+  const handleClose = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
   return (
     <section className="contactHolder">
-      {open ? (
-        <Collapse
-          in={open}
-          sx={{
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            width: "50vw",
-            margin: "0 auto",
-          }}
-        >
-          <Alert
-            action={
-              <IconButton
-                aria-label="close"
-                color="inherit"
-                size="small"
-                onClick={() => {
-                  setOpen(false);
-                }}
-              >
-                <CloseIcon fontSize="inherit" />
-              </IconButton>
-            }
-          >
-            Message is sent successfull
-          </Alert>
-        </Collapse>
-      ) : null}
+      {/* {open ? ( */}
+         <Snackbar open={open} autoHideDuration={6000} onClose={handleClose}>
+         <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+           This is a success message!
+         </Alert>
+       </Snackbar>
+      {/* ) : null}  */}
 
       <div id="contact" className="contact">
         <div class="contact-box">

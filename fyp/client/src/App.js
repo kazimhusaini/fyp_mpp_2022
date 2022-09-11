@@ -14,7 +14,6 @@ import { Context } from "./context/Context";
 import { Home } from "./components/Pages/Home/Home";
 import { GeneratePost } from "./components/Pages/GeneratePost/GeneratePost";
 import { ChatDash } from "./components/Pages/Chat/ChatDash";
-
 import { List } from "./components/Pages/list/List";
 import { DarkModeContext } from "./context/darkModeContext";
 import { UpdateProfileForm } from "./components/UpdateProfileForm";

@@ -36,14 +36,12 @@ export default function Cards({ post }) {
 
               <span class="button">
                 <Link to={`/post/${post._id}`} className="slbtn">
-                <Button sx={{margin:"10px 0 0"}} variant="contained" className=''>See More</Button>
+                <Button sx={{margin:"10px 0 0"}} variant="contained" className=''>View</Button>
                 </Link>
               </span>
             </span>
           </CardContent>
         </CardActionArea>
-        <CardActions>
-        </CardActions>
       </Card>
     </Link>
   );

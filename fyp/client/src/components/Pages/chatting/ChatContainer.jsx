@@ -82,7 +82,6 @@ export default function ChatContainer({ currentChat }) {
     try {
       const res = await axios.post("/posts/sentToMail", newPost);
       console.log("email sent");
-      setOpen(true)
     } catch (err) {
       if (err.response.data) {
         console.log(err.response.data);
@@ -97,7 +96,7 @@ export default function ChatContainer({ currentChat }) {
         setNotifications((prev) => [...prev, messages]);
       });
     }
-  }, []);
+  }, [messages]);
 
   useEffect(() => {
     arrivalMessage && setMessages((prev) => [...prev, arrivalMessage]);

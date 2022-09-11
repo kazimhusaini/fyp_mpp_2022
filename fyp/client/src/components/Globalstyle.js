@@ -159,7 +159,7 @@ export const GlobalStyles = createGlobalStyle
         background:${({ theme }) => theme.bodyColor2} !important;;
         color: ${({ theme }) => theme.text} !important;
         transition: all 0.50s linear;
-        border:1px solid  ${({ theme }) => theme.btnColor} !important;
+        // border:1px solid  ${({ theme }) => theme.btnColor} !important;
       }
       .textAreaG{
         background:${({ theme }) => theme.body} !important;
@@ -205,6 +205,31 @@ export const GlobalStyles = createGlobalStyle
         transition: all 0.50s linear;
         font-size:16px;
       }
+      .cPanelContent,.imageContentHolder{
+        background:${({ theme }) => theme.bodyColor2} !important;
+        color: ${({ theme }) => theme.text} !important;
+        transition: all 0.50s linear;
+      }
+      .cPanelContent  ul {
+        margin:0;
+        padding:0;
+      }
+      .cPanelContent  ul li{
+        margin:0;
+        padding:0;
+      }
+      .cPanelContent h5 ,.cPanelContent  ul li,.cPanelContent  p{
+        color: ${({ theme }) => theme.text} !important;
+        transition: all 0.50s linear;
+      }
+      .cPanelContent:hover h5 ,.cPanelContent:hover  ul li,.cPanelContent:hover p{
+        color: ${({ theme }) => theme.text} !important;
+      }
+      .cPanelContent .cPanelSection:hover{
+        background:${({ theme }) => theme.btnTextb} !important;
+
+      }
+      
       .cont{
         border-color:${({ theme }) => theme.btnColor} !important;
       }
