@@ -135,19 +135,23 @@ function Header(props) {
               </a>
             ))} */}
             <NavLink
-             to="/"
+              to="/"
               className="navText"
               style={{ color: "#fff", margin: "0 10px" }}
             >
               Home
             </NavLink>
-            <NavLink
-            to="/contactus"
+            <a
+              href="#contact"
               className="navText"
-              style={{ color: "#fff", margin: "0 10px" ,textDecoration:"none"}}
+              style={{
+                color: "#fff",
+                margin: "0 10px",
+                textDecoration: "none",
+              }}
             >
               Contact
-            </NavLink>
+            </a>
           </Box>
           <Box
             className="btnholder"
@@ -202,7 +206,7 @@ function Header(props) {
           open={mobileOpen}
           onClose={handleDrawerToggle}
           ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
+            keepMounted: true, 
           }}
           sx={{
             display: { xs: "block", sm: "none" },
@@ -220,10 +224,6 @@ function Header(props) {
 }
 
 Header.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 

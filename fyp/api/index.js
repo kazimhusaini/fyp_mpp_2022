@@ -6,9 +6,23 @@ const authRoute = require("./routes/auth");
 const userRoute = require("./routes/users");
 const postRoute = require("./routes/posts");
 const messageRoutes = require("./routes/messages");
+const otpRoutes = require("./routes/otp");
+
 const socket = require("socket.io");  
+const bodyparser=require('body-parser');
+const exphbs=require('express-handlebars');
+// const pino = require('express-pino-logger')();
+// app.engine('handlebars',exphbs({ extname: "hbs", defaultLayout: false, layoutsDir: "views/ "}));
+// app.use(pino);
 
+// app.set('view engine','handlebars');
 
+// body parser middleware
+app.use(bodyparser.urlencoded({extended : false}));
+app.use(bodyparser.json());
+
+//static folder
+// app.use('/public',express.static(path.join(__dirname, 'public')));
 // const routess = require("./routes/routes");
 const cors = require("cors");
 app.use(cors());
@@ -46,7 +60,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 app.use("/api/messages", messageRoutes);
-// app.use("/api", routess);
+app.use("/api/otp", otpRoutes);
 
 const server =app.listen("5000", () => {
   console.log("Backend is running.");

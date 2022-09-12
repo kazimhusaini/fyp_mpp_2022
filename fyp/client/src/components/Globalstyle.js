@@ -9,7 +9,14 @@ export const GlobalStyles = createGlobalStyle
       transition: all 0.50s linear;
       .MuiSvgIcon-root{
       color: ${({ theme }) => theme.text} !important;
-     c
+     
+      }
+      #contact{
+      background:${({ theme }) => theme.body} ;
+      }
+      .contact-form-wrapper{
+      background:${({ theme }) => theme.bodyColor2} ;
+
       }
       .sidebar .MuiSvgIcon-root{
         color: rgb(209,213,219) !important ;

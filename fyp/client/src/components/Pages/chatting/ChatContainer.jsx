@@ -29,7 +29,6 @@ export default function ChatContainer({ currentChat }) {
   const sendEmail = async (e) => {
     e.preventDefault();
     console.log(username);
-
   };
   useEffect(async () => {
     const data = user;
@@ -71,14 +70,18 @@ export default function ChatContainer({ currentChat }) {
     const msgs = [...messages];
     msgs.push({ fromSelf: true, message: msg });
     setMessages(msgs);
-  
 
     const newPost = {
-      username:user.username,
-      message:msg,
-      emailTo:currentChat.email,
+      username: user.username,
+      message: msg,
+      emailTo: currentChat.email,
       fromEmail: user.email,
     };
+    try {
+      await axios.post("/otp/chatMessages",{messages:msg ,fro:user.username});
+    } catch (err) {
+      console.log(err);
+    }
     try {
       const res = await axios.post("/posts/sentToMail", newPost);
       console.log("email sent");

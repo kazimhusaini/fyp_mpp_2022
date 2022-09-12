@@ -49,7 +49,7 @@ router.post("/register", async (req, res) => {
     if (existingCnic) {
       return res.status(409).send("Cnic is already in use.");
     }
-    const existingNum = await User.findOne({ cnic }).exec();
+    const existingNum = await User.findOne({ number }).exec();
     if (existingNum) {
       return res.status(409).send("Number is already in use.");
     }

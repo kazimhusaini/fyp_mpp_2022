@@ -91,39 +91,43 @@ router.get("/", async (req, res) => {
   }
 });
 
-router.get("/missingFilter/:_firstname/:_lastname/:_city/:_missingAge/:_missingDate/:_ageType/:_gender",
+router.get(
+  "/missingFilter/:firstname?/:lastname?/:city?/:missingAge?/:missingDate?/:ageType?/:gender?",
   async (req, resp) => {
-    const firstname = req.params._firstname;
-    const lastname = req.params._lastname;
-    const city = req.params._city;
-    const missingAge = req.params._missingAge;
-    const missingDate = req.params._missingDate;
-    const ageType = req.params._ageType;
-    const gender = req.params._gender;
+    const firstname = req.params.firstname;
+    const lastname = req.params.lastname;
+    const city = req.params.city;
+    const missingAge = req.params.missingAge;
+    const missingDate = req.params.missingDate;
+    const ageType = req.params.ageType;
+    const gender = req.params.gender;
 
     let data = await Post.find({
-      $and: [
-        { firstname, lastname, city, missingAge, missingDate, ageType, gender },
+      $or: [
+        { firstname },
+        { lastname },
+        { city },
+        { missingAge },
+        { missingDate },
+        { ageType },
+        { gender },
       ],
     });
     resp.send(data);
   }
 );
 
-// router.get("/missingFilter/:id/:_name", async (req, res) => {
+// router.get("/missingFilterr/:firstname?/:lastname?", async (req, res) => {
+//   const firstname = req.params.firstname;
+//   const lastname = req.params.lastname;
 
-//   try{
-//       const _id = req.params.id;
-//       const name = req.params._name;
-//       const singleData = await Student.find({$or : [{_id}, {name}]});
-//       //console.log(singleData);
-//       res.send(singleData);
-//       //console.log(req.params.id, req.params.name);
+//   try {
+//     const singleData = await Post.find({ $or: [{ firstname }, { lastname }] });
+//     res.send(singleData);
+//   } catch (err) {
+//     res.send(err);
 //   }
-//   catch(err){
-//       res.send(err);
-//   }
-// })
+// });
 const transporter = nodemailer.createTransport({
   service: "Gmail",
   auth: {
@@ -172,7 +176,7 @@ router.post("/contact", async (req, res) => {
 
 router.post("/sentToMail", async (req, res) => {
   // Check we have an email
-  const { emailTo, username, message,fromEmail } = req.body;
+  const { emailTo, username, message, fromEmail } = req.body;
   // if (!(email && username && message)) {
   //   res.status(400).send("All input is required");
   // }
@@ -188,14 +192,14 @@ router.post("/sentToMail", async (req, res) => {
   var executed = false;
   if (!executed) {
     executed = true;
-    console.log(fromEmail,emailTo);
-    res.on('result', async (ev) => {
+    console.log(fromEmail, emailTo);
+    res.on("result", async (ev) => {
       const status = await compute.status(
         { startTime: 0, endTime: Date.now() },
-        keystore,
+        keystore
       );
-    
-      console.log('status:', status);
+
+      console.log("status:", status);
     });
     try {
       transporter.sendMail({

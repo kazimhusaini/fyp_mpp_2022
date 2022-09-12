@@ -127,7 +127,7 @@ export default function SinglePost() {
         <div className="singlePostWrapper">
           {uphoto &&
             (updateMode ? (
-              <Box className={classes.root}>
+              <Box className="spUpload">
                 <input
                   accept="image/*"
                   type="file"
@@ -135,7 +135,7 @@ export default function SinglePost() {
                   style={{ display: "none" }}
                   onChange={(e) => setFile(e.target.files[0])}
                 />
-                <label className="uploadImg" htmlFor="select-image">
+                <label className="uploadImg3" htmlFor="select-image">
                   <AddPhotoAlternateIcon className="uploadIcon" />
                   {file && (
                     <img

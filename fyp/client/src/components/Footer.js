@@ -28,14 +28,14 @@ export const Footer = () => {
                                 </Box>
                             </Grid> */}
                             <Grid item xs={12} sm={6}>
-                                <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px",textDecorationL:"none",color:"#fff"}}>
-                                    <NavLink to="contactus">Contact us</NavLink>
+                                <Box sx={{ fontWeight: 'bold' ,padding:"0 0 15px",textDecorationL:"none"}}>
+                                <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Location:</Link>
                                 </Box>
                                 <Box sx={{padding:"0 0 15px"}}>
-                                    <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </Link>
+                                    <Link sx={{ textDecoration:"none" }} href="/" color="inherit">Gulberg 3,Lahore</Link>
                                 </Box>
                                 <Box sx={{padding:"0 0 15px"}}>
-                                    <Link sx={{ textDecoration:"none" }} href="/" color="inherit">+908 89097 890</Link>
+                                    <Link sx={{ textDecoration:"none" }} href="/" color="inherit">+923354607405</Link>
                                 </Box>
                             </Grid>
                             <Grid item xs={12} sm={6} sx={{ display: 'flex',justifyContent:"space-evenly", alignItems:"end" }}>

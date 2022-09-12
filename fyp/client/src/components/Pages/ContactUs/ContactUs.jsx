@@ -1,4 +1,4 @@
-import { Alert, AlertTitle, Collapse, IconButton } from "@mui/material";
+import { Alert, AlertTitle, Button, Collapse, IconButton } from "@mui/material";
 import React, { useState } from "react";
 import Snackbar from '@mui/material/Snackbar';
 import "./contactUs.css";
@@ -50,9 +50,9 @@ export const ContactUs = () => {
       <div id="contact" className="contact">
         <div class="contact-box">
           <div class="contact-links">
-            <h2>CONTACT</h2>
+            <h2 style={{fontSize:"32px"}}>CONTACT US</h2>
             <div class="links">
-              <div class="link">
+              {/* <div class="link">
                 <a>
                   <img
                     src="https://i.postimg.cc/m2mg2Hjm/linkedin.png"
@@ -67,7 +67,7 @@ export const ContactUs = () => {
                     alt="email"
                   />
                 </a>
-              </div>
+              </div> */}
             </div>
           </div>
           <div class="contact-form-wrapper">
@@ -99,9 +99,9 @@ export const ContactUs = () => {
                   onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
-              <button class="submit-btn" type="submit">
+              <Button variant="contained" type="submit">
                 Send
-              </button>
+              </Button>
             </form>
           </div>
         </div>

@@ -18,6 +18,7 @@ import axios from "axios";
 import { useContext, useRef } from "react";
 import { Context } from "../context/Context";
 import Header from "./AppBar";
+import { ContactUs } from "./Pages/ContactUs/ContactUs";
 const useStyles = makeStyles((theme) => ({
   root: {
     "& .htoolbar": {
@@ -71,6 +72,8 @@ export const HomePage = () => {
       <FilterContent />
       <Divider />
       <MSlider />
+      <Divider />
+      <ContactUs />
       <Divider />
       <Footer />
     </div>

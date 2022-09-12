@@ -63,6 +63,11 @@ const UserSchema = new mongoose.Schema(
             required: true,
             default: false
         },
+        verifiedNumber: {
+            type: Boolean,
+            required: true,
+            default: false
+        },
         resetLink:{
             data:String,
             default:''

@@ -1,16 +1,12 @@
 
 .contactHolder {
-  background-color: #6a9ac4;
-  height: 100vh;
-  width: 100vw;
+  background-color: #fff;
 }
 
 #contact {
-  background-color: #6a9ac4;
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
 
 .contact-box {
@@ -18,6 +14,8 @@
   margin: 80px 50px;
   display: flex;
   flex-wrap: wrap;
+  -webkit-box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
+  box-shadow: 0 0 15px 2px rgba(0,0,0,0.1);
 }
 
 .contact-links, .contact-form-wrapper {
@@ -152,7 +150,7 @@
   transition: all .225s ease;
 }
 
-.submit-btn {
+/* .submit-btn {
   background-color: #fd917e;
   filter: drop-shadow(2px 2px 3px #0003);
   color: #fff;
@@ -166,7 +164,7 @@
   cursor: pointer;
   user-select: none;
   transition: 0.2s;
-}
+} */
 
 .submit-btn:hover {
   transform: scale(1.1, 1.1);

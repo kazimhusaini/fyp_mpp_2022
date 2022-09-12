@@ -171,8 +171,6 @@ export default function UpdateProfileForm() {
             } catch (err) { }
         }
         try {
-
-
             const res = await axios.put("/users/" + user._id, updatedUser, {
                 headers: { authorization: "Bearer " + user.token },
             });

@@ -37,6 +37,7 @@ const useStyles = makeStyles((theme) => ({
       border: "2px dashed  #000",
       display: "flex",
       position: "relative",
+      cursor: "pointer",
       "& img": {
         height: "240px",
         width: "240px",
@@ -123,14 +124,12 @@ const useStyles = makeStyles((theme) => ({
       justifyContent: "center",
       boxShadow: "0 0 15px 2px rgba(0,0,0,0.1)",
       padding: "50px 30px 80px",
-      margin: "20px",
       [theme.breakpoints.down("sm")]: {},
       [theme.breakpoints.down("xs")]: {
         justifyContent: "center",
         gap: "30px 0",
         justifyContent: "center",
         flexDirection: " column",
-        
       },
       "& .arrowImage": {
         width: "auto",
@@ -396,6 +395,15 @@ const UploadImage = ({ post }) => {
                     />
                   )}
                 </label>
+                <h2
+                  style={{
+                    textAlign: "center",
+                    fontSize: "18px",
+                    fontWeight: " bold",
+                  }}
+                >
+                  Choose Image
+                </h2>
               </Box>
             </Box>
             {show ? (

@@ -295,3 +295,22 @@ body {margin:auto;padding:0;}
   50% { opacity:0; width:20%; padding-bottom:20%; }
   100% { opacity:0; width:0%; padding-bottom:0%; }
 }
+.chatC{
+  margin: 30px;
+}
+.notFound{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bolder;
+  width: 100%;
+  /* background: gold; */
+  font-size: 37px;
+  height: 50px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  margin: auto;
+}
